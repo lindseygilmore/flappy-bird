@@ -19,7 +19,7 @@ var mainState = {
 
 		var spaceKey = game.input.keyboard.addKey(
 						Phaser.Keyboard.SPACEBAR);
-		SPA	spaceKey.onDown.add(this.jump, this);
+		spaceKey.onDown.add(this.jump, this);
 	},
 
 	update: function() {
@@ -35,7 +35,7 @@ var mainState = {
 	},
 
 	restartGame: function() {
-		
+
 		game.state.start('main');
 	}
 };
