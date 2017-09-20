@@ -7,6 +7,8 @@ var mainState = {
 
 	create: function() {
 
+		this.pipes = game.add.group();
+
 		game.stage.backgroundColor = '#71c5cf';
 
 		game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -20,6 +22,20 @@ var mainState = {
 		var spaceKey = game.input.keyboard.addKey(
 						Phaser.Keyboard.SPACEBAR);
 		spaceKey.onDown.add(this.jump, this);
+	},
+
+	addOnePipe: function(x, y){
+		var pipe = game.add.sprite(x, y, 'pipe');
+
+		this.pipes.add(pipe);
+
+		game.physics.arcade.enable(pipe);
+
+		pipe.body.velocity.x = -200;
+
+		pipe.checkWorldBounds = true;
+
+		pipe.outOfBoundsKill = true;
 	},
 
 	update: function() {
