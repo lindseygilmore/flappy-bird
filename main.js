@@ -88,6 +88,13 @@ for (i=0; i<=100; i++){
 	}
 };
 
+var inputString = 'Welcome to 30 Days of Code!';
+
+function processData(inputString){
+	console.log("Hello World.");
+	console.log(inputString);
+}
+
 
 
 
