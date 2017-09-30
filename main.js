@@ -95,6 +95,20 @@ function processData(inputString){
 	console.log(inputString);
 }
 
+var input = '';
+var index = 0;
+
+process.stdin.on('data', (data) => { input += data; });
+process.stdin.on( 'end', () => {
+	input = input.split(new RegExp('[\n ]+'));
+	main(+(input[0]), +(input[1]), +(input[2]));
+
+});
+
+function main(mealCost, tipPercent, taxPercent){
+
+};
+
 
 
 
